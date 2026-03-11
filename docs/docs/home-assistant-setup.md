@@ -25,7 +25,7 @@ customize:
   active: false
   folder: mosquitto
 ```
-## MQTT notes
+## MQTT Setup
 
 - The default MQTT port is `1883`
 - The MQTT broker IP should be the IP address of the Home Assistant instance
@@ -33,4 +33,40 @@ customize:
 - The MQTT username and password created here must match the credentials used in the ESP32 firmware
 
 <img width="975" height="730" alt="image" src="https://github.com/user-attachments/assets/d19aef7f-2df3-4a05-b545-54c579210bb2" />
+
+
+## Install the Node-RED add-on
+
+After MQTT is working, install the Node-RED add-on in Home Assistant.
+
+Node-RED is used in this project to tie everything together:
+
+- camera detection events from Home Assistant
+- time and logic conditions
+- MQTT publish and subscribe actions
+- optional phone call or SMS notifications through Twilio
+
+This makes it easy to expand the project later without constantly changing the ESP32 firmware.
+
+## How the flow works
+
+The Node-RED flow is simple and event-driven.
+
+At a high level:
+
+1. The Ubiquiti camera detects a vehicle or person
+2. Home Assistant exposes that event as an entity state
+3. Node-RED watches that entity for a change to `on`
+4. A time range check is applied if needed
+5. If the condition passes, Node-RED turns on a Home Assistant helper
+6. That helper change triggers the MQTT publish node
+7. The ESP32 receives the MQTT message and plays the announcement
+8. After a short delay, the helper is turned back off so the system can trigger again cleanly
+
+A physical button on the ESP32 can also publish an MQTT message back into Home Assistant for testing or for additional automations.
+
+```text
+sitelocation/announcement/button
+```
+
 
