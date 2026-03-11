@@ -158,3 +158,62 @@ Use the following code under Data in the action Node:
 ```text
 {   "entity_id": "input_boolean.announcement_trigger" }
 ```
+
+
+
+## Node-RED flow: helper to announcement playback
+
+This second part of the Node-RED flow handles the actual announcement trigger.
+
+<img width="881" height="227" alt="image" src="https://github.com/user-attachments/assets/6b3786be-e282-43cd-b9c8-1569db0c1ef1" />
+
+Once the Home Assistant helper turns on, Node-RED watches for that state change and uses it as the signal to publish the MQTT play command to the ESP32 announcer.
+
+The MQTT output node publishes to the announcement topic:
+
+```text
+sitelocation/announcement/play
+```
+
+When the ESP32 receives that MQTT message, it plays the local MP3 file through the connected PA speaker system.
+
+At the same time, the flow also passes through a short delay. After that delay, a Home Assistant action node turns the helper back off.
+
+This resets the system so it is ready for the next detection event.
+
+<table>
+  <tr>
+    <td align="center">
+      <img width="500" alt="Node-RED helper to playback flow overview" src="https://github.com/user-attachments/assets/f8ed6121-0346-432a-89ff-4cba8f1c9305" />
+    </td>
+    <td align="center">
+      <img width="500" alt="MQTT publish node for announcement playback" src="https://github.com/user-attachments/assets/44a33cd0-fb24-4ef9-afe6-28255df93b98" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img width="500" alt="Delay node" src="https://github.com/user-attachments/assets/9f398942-25d8-48f9-8743-06d8e5f143d8" />
+    </td>
+    <td align="center">
+      <img width="500" alt="Helper turn off action node" src="https://github.com/user-attachments/assets/3214e0ec-0276-4b16-8cf1-8c429ee2bbe7" />
+    </td>
+  </tr>
+</table>
+
+Use the following code under Data in the action Node: 
+```text
+{   "entity_id": "input_boolean.announcement_trigger" }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
