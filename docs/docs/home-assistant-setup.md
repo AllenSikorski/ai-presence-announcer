@@ -206,14 +206,15 @@ Use the following code under Data in the action Node:
 ```
 
 
+## Final notes
 
+The goal of this setup is to keep the ESP32 firmware simple and let Home Assistant and Node-RED handle the higher-level automation logic.
 
+This makes the project easier to expand later. Detection rules, time windows, notifications, helper behavior, and automation flow can all be adjusted without needing to rewrite the embedded code.
 
+## Next step
 
+After Home Assistant, MQTT, and Node-RED are configured, continue with:
 
-
-
-
-
-
+- [ESP32 / Arduino and DFPlayer Setup](arduino-setup.md)
 
