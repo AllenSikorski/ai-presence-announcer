@@ -212,6 +212,13 @@ The goal of this setup is to keep the ESP32 firmware simple and let Home Assista
 
 This makes the project easier to expand later. Detection rules, time windows, notifications, helper behavior, and automation flow can all be adjusted without needing to rewrite the embedded code.
 
+
+## Previous step
+
+Before this section, complete:
+
+- [Ubiquiti AI Camera Setup](ubiquiti-ai-camera-setup.md)
+
 ## Next step
 
 After Home Assistant, MQTT, and Node-RED are configured, continue with:
