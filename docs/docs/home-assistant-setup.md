@@ -144,5 +144,24 @@ Use the following code under Data in the action Node:
 <img width="500" height="522" alt="image" src="https://github.com/user-attachments/assets/8dc72ee8-9604-4664-9f16-9280db1b1956" />
 
 
+next
 
+<table>
+  <tr>
+    <td align="center">
+      <img width="500" alt="Node-RED flow overview" src="https://github.com/user-attachments/assets/598d404a-54ca-4411-818c-348f7975b23f" />
+    </td>
+    <td align="center">
+      <img width="500" alt="Vehicle detection state node" src="https://github.com/user-attachments/assets/ebe1406c-288c-4edb-9d90-0280e3eb8d2c" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img width="500" alt="Action node data" src="https://github.com/user-attachments/assets/ccb47df1-b0a3-465d-a805-409f35b7725d" />
+    </td>
+    <td align="center">
+      <img width="500" alt="Time range node" src="https://github.com/user-attachments/assets/8dc72ee8-9604-4664-9f16-9280db1b1956" />
+    </td>
+  </tr>
+</table>
 
