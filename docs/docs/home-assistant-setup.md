@@ -105,6 +105,44 @@ input_boolean.announcement_trigger
 
 This helper is used by Node-RED as a simple internal trigger flag.
 
+
+
+
 When the detection conditions are met, Node-RED turns the helper on. That change can then be used to trigger the MQTT publish node that tells the ESP32 announcer to play. After a short delay, the helper is turned back off so the flow is ready for the next event.
 
 This gives you a clean event pulse and makes it easier to add additional actions later.
+
+
+
+
+## Node-RED flow: detection to trigger helper
+
+This first part of the Node-RED flow handles the initial detection logic.
+
+When the Ubiquiti camera detects a vehicle, Home Assistant exposes that detection as an entity state. Node-RED watches that entity and waits for it to change to `on`.
+
+Once the detection is active, the flow passes through a time range check. In this example, announcements are only allowed between `8:00` and `16:30`.
+
+If the detection happens during the allowed time window, Node-RED turns on the Home Assistant helper:
+
+```text
+input_boolean.announcement_trigger
+```
+
+
+That helper acts as the internal handoff point for the rest of the automation. The second half of the flow will watch for that helper to turn on and then publish the MQTT play command to the ESP32 announcer.
+
+<img width="717" height="215" alt="image" src="https://github.com/user-attachments/assets/789d9f35-42ef-4ca4-b45f-aaae78b1d4e3" />
+
+<img width="502" height="426" alt="image" src="https://github.com/user-attachments/assets/598d404a-54ca-4411-818c-348f7975b23f" />
+<img width="502" height="405" alt="image" src="https://github.com/user-attachments/assets/ebe1406c-288c-4edb-9d90-0280e3eb8d2c" />
+Use the following code under Data in the action Node: 
+```text
+{   "entity_id": "input_boolean.announcement_trigger" }
+```
+<img width="487" height="394" alt="image" src="https://github.com/user-attachments/assets/ccb47df1-b0a3-465d-a805-409f35b7725d" />
+<img width="500" height="522" alt="image" src="https://github.com/user-attachments/assets/8dc72ee8-9604-4664-9f16-9280db1b1956" />
+
+
+
+
