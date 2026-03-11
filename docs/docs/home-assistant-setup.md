@@ -134,17 +134,6 @@ That helper acts as the internal handoff point for the rest of the automation. T
 
 <img width="717" height="215" alt="image" src="https://github.com/user-attachments/assets/789d9f35-42ef-4ca4-b45f-aaae78b1d4e3" />
 
-<img width="502" height="426" alt="image" src="https://github.com/user-attachments/assets/598d404a-54ca-4411-818c-348f7975b23f" />
-<img width="502" height="405" alt="image" src="https://github.com/user-attachments/assets/ebe1406c-288c-4edb-9d90-0280e3eb8d2c" />
-Use the following code under Data in the action Node: 
-```text
-{   "entity_id": "input_boolean.announcement_trigger" }
-```
-<img width="487" height="394" alt="image" src="https://github.com/user-attachments/assets/ccb47df1-b0a3-465d-a805-409f35b7725d" />
-<img width="500" height="522" alt="image" src="https://github.com/user-attachments/assets/8dc72ee8-9604-4664-9f16-9280db1b1956" />
-
-
-next
 
 <table>
   <tr>
@@ -165,3 +154,7 @@ next
   </tr>
 </table>
 
+Use the following code under Data in the action Node: 
+```text
+{   "entity_id": "input_boolean.announcement_trigger" }
+```
