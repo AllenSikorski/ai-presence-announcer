@@ -39,6 +39,8 @@ customize:
 
 After MQTT is working, install the Node-RED add-on in Home Assistant.
 
+<img width="913" height="436" alt="image" src="https://github.com/user-attachments/assets/e8e6414f-ba38-449c-8f46-72f3d4e33d7a" />
+
 Node-RED is used in this project to tie everything together:
 
 - camera detection events from Home Assistant
@@ -69,4 +71,40 @@ A physical button on the ESP32 can also publish an MQTT message back into Home A
 sitelocation/announcement/button
 ```
 
+### MQTT publish node
 
+The flow sends a play command to the ESP32 on a topic like:
+
+```text
+sitelocation/announcement/play
+```
+Use topic names that make sense for your own environment.
+
+## Home Assistant helper
+
+This project uses a Home Assistant helper as a clean internal trigger point between the camera event and the MQTT announcement action.
+
+First, add the helper to your Home Assistant configuration.
+
+In `configuration.yaml`, create an `input_boolean` entry for the announcer trigger.
+
+```yaml
+input_boolean:
+  announcement_trigger:
+    name: AI Presence Announcer Trigger
+    icon: mdi:bell-ring
+```
+
+After saving the configuration, restart Home Assistant so the new helper is loaded.
+
+Once Home Assistant comes back up, the helper will be available as:
+
+```text
+input_boolean.announcement_trigger
+```
+
+This helper is used by Node-RED as a simple internal trigger flag.
+
+When the detection conditions are met, Node-RED turns the helper on. That change can then be used to trigger the MQTT publish node that tells the ESP32 announcer to play. After a short delay, the helper is turned back off so the flow is ready for the next event.
+
+This gives you a clean event pulse and makes it easier to add additional actions later.
