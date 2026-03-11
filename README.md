@@ -53,7 +53,8 @@ The system can also be triggered locally from a physical button connected to the
 ## Screenshots
 
 ### Node-RED flow logic
-<img width="906" height="475" alt="image" src="https://github.com/user-attachments/assets/9aac2e4d-81bc-4aa1-b728-ab403e760be6" />
+<img width="913" height="436" alt="image" src="https://github.com/user-attachments/assets/8db1f2ef-2035-4c91-9e44-7d62fc7436a4" />
+
 
 ### Wiring diagram
 ![Wiring diagram](assets/wiring-diagram.png)
