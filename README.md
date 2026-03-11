@@ -57,3 +57,11 @@ The system can also be triggered locally from a physical button connected to the
 
 ### Wiring diagram
 ![Wiring diagram](assets/wiring-diagram.png)
+
+## Setup and documentation
+
+For the technical setup details, see the supporting documentation:
+
+- [Parts list](docs/parts-list.md)
+- [Home Assistant, MQTT, and Node-RED setup](docs/home-assistant-setup.md)
+- [ESP32 / Arduino firmware setup](docs/arduino-setup.md)
