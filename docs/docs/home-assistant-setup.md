@@ -25,4 +25,12 @@ customize:
   active: false
   folder: mosquitto
 ```
+## MQTT notes
+
+- The default MQTT port is `1883`
+- The MQTT broker IP should be the IP address of the Home Assistant instance
+- That IP should be static, not assigned by DHCP
+- The MQTT username and password created here must match the credentials used in the ESP32 firmware
+
+<img width="975" height="730" alt="image" src="https://github.com/user-attachments/assets/d19aef7f-2df3-4a05-b545-54c579210bb2" />
 
