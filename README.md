@@ -60,8 +60,9 @@ The system can also be triggered locally from a physical button connected to the
 
 ## Setup and documentation
 
-For the technical setup details, see the supporting documentation:
+This README is meant to provide a high-level overview of the project. For setup details and implementation notes, see:
 
 - [Parts list](docs/parts-list.md)
+- [Ubiquiti AI camera setup](docs/ubiquiti-ai-camera-setup.md)
 - [Home Assistant, MQTT, and Node-RED setup](docs/home-assistant-setup.md)
-- [ESP32 / Arduino firmware setup](docs/arduino-setup.md)
+- [ESP32 / Arduino and DFPlayer setup](docs/arduino-setup.md)
