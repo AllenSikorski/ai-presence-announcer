@@ -16,10 +16,8 @@ MP3 playback module used to play the local chime or voice announcement from the 
 ### [Lever Connectors](https://www.amazon.com/dp/B01EV70C78)
 Used to make the wiring cleaner and easier to service.
 
-### 2-Wire Push Button
+### [2-Wire Push Button](https://www.amazon.com/dp/B08JHW8BPV)
 Used as a local physical trigger for testing or manual announcements.
-
-Any standard 2-wire momentary push button should work.
 
 ## Notes
 
