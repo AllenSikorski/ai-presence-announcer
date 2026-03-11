@@ -8,7 +8,7 @@ For this project, Home Assistant acts as the central automation platform. It rec
 
 The first step is installing the Mosquitto MQTT broker add-on in Home Assistant.
 
-
+<img width="975" height="463" alt="image" src="https://github.com/user-attachments/assets/95c7987b-0eb5-4625-a834-2ddbd9d8dadc" />
 
 Once installed, edit the broker configuration. YAML is the easiest way to do this for a simple setup like this.
 
